@@ -45,4 +45,8 @@ void ping_pong() {
     //if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) {
     //  v = 0;
     //}
+
+    if ((getch()) == 'e') { //se supone que si se toca "e" sale del bucle
+         return;
+        }   
 }

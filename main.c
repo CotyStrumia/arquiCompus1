@@ -9,7 +9,7 @@
 #include <ncurses.h>
 #include <unistd.h>
 #include "EasyPio.h"
-
+#include "assembly/funciones_Ass.h" //cuando probemos estas funciones hay que anular las librerias de las otras porque sino se pisan
 
 void disp_binary(int i);
 void delay(unsigned long int *a);

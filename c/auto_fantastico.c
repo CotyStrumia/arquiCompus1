@@ -21,6 +21,7 @@ void auto_fantastico() {
             Leds(output);
             delay(&timeAuto); // Espera un momento
             output = output >> 1; // ">>" desplazamiento a la derecha
+            refresh(); //ver esto para que no se flashee
         }
         
         for (int i = 0; i < 7; i++) {
@@ -28,12 +29,17 @@ void auto_fantastico() {
             Leds(output1);
             delay(&timeAuto); // Espera un momento
             output1 = output1 << 1; // "<<" desplazamiento a la izquierda
+            refresh();
         }
 
         //if (GetAsyncKeyState(VK_RETURN) & 0x8000) { funcion especifica para prueba en windows
           //  v = 0;
            // break;
         //}
+
+        if ((getch()) == 'e') { //se supone que si se toca "e" sale del bucle
+         return;
+        }   
 
 
     
