@@ -4,6 +4,9 @@
 
 .global pila
 .global ping_pong
+.extern disp_binary
+.extern Leds
+.extern Delay
 
 
 pila:
@@ -30,6 +33,7 @@ loop
     mov r10, r2
     bl disp_binary
     bl Leds
+    bl delay
     mov r11, #8
     
 output1_loop:
