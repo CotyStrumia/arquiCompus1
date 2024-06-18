@@ -25,7 +25,7 @@ pila:
     mov r8, #0x80     
     mov r9, #0x80     
 
-loop
+loop:
     
     cmp r1, #0
     beq end_loop
