@@ -246,13 +246,6 @@ not_first_time:
     mov r7, #10
     bl loop_inner
 
-loop_done:
-  
-    ldr r0, =VK_ESCAPE
-    bl GetAsyncKeyState
-    cmp r0, #0
-    beq skip_exit
-
   
 loop_inner:
 loop_inner_start:
@@ -261,7 +254,7 @@ loop_inner_start:
 
     ldrb r4, [r3, r6]
     bl disp_binary
-    bl leds
+    bl Leds
     ldr r0, [sp, #8]
  bl disp_binary
     bl Leds
