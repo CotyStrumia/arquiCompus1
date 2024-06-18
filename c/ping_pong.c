@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <ncurses.h>
 
 
 void disp_binary(int i);
