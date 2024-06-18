@@ -228,7 +228,7 @@ ping_pong:
     ldr r3, =tabla      
   
 
-loop:
+loop1:
     
     cmp r2, #0
     bne not_first_time
