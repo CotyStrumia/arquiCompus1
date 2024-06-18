@@ -137,7 +137,7 @@ void disp_binary(int i) {
         }
     }
     printf("\n");
-    leds(i);
+    Leds(i);
 }
 
 /*void delay(unsigned long int *a) { esta funcion es especifica para windows, se uso a modo de prueba
