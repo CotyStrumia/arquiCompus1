@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ncurses.h>
 
 void disp_binary(int i);
 void delay(unsigned long int *a);
