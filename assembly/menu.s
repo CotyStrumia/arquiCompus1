@@ -14,16 +14,16 @@ pila:
     push {r4, r5, r6, r7, lr}
 
     ldr r0, =speed
-    ldr r0, [r0]       @ speed
-    mov r1, #1         @ v
-    mov r2, #0x80      @ output1
-    mov r3, #0x80      @ output2
-    mov r4, #0x80      @ output3
-    mov r5, #0x80      @ output4
-    mov r6, #0x80      @ output5
-    mov r7, #0x80      @ output6
-    mov r8, #0x80      @ output7
-    mov r9, #0x80      @ output8
+    ldr r0, [r0]       
+    mov r1, #1         
+    mov r2, #0x80      
+    mov r3, #0x80      
+    mov r4, #0x80      
+    mov r5, #0x80      
+    mov r6, #0x80      
+    mov r7, #0x80      
+    mov r8, #0x80     
+    mov r9, #0x80     
 
 loop
     
@@ -49,7 +49,7 @@ output1_loop:
     b output1_loop
 
 output2_start:
-    @ output2 + output1
+   
     add r10, r3, r2
     bl disp_binary
     bl Leds
@@ -68,7 +68,7 @@ output2_loop:
     b output2_loop
 
 output3_start:
-    @ output3 + output2 + output1
+   
     add r10, r4, r3
     add r10, r10, r2
     bl disp_binary
@@ -90,7 +90,7 @@ bl delay
     b output3_loop
 
 output4_start:
-    @ output4 + output3 + output2 + output1
+    
     add r10, r5, r4
     add r10, r10, r3
     add r10, r10, r2
@@ -114,7 +114,7 @@ bl delay
     b output4_loop
 
 output5_start:
-    @ output5 + output4 + output3 + output2 + output1
+   
     add r10, r6, r5
     add r10, r10, r4
     add r10, r10, r3
@@ -140,7 +140,7 @@ bl delay
     b output5_loop
 
 output6_start:
-    @ output6 + output5 + output4 + output3 + output2 + output1
+   
     add r10, r7, r6
     add r10, r10, r5
     add r10, r10, r4
@@ -168,7 +168,7 @@ output6_loop:
     b output6_loop
 
 output7_start:
-    @ output7 + output6 + output5 + output4 + output3 + output2 + output1
+   
     add r10, r8, r7
     add r10, r10, r6
     add r10, r10, r5
@@ -198,7 +198,7 @@ output7_loop:
     b output7_loop
 
 output8_start:
-    @ output8 + output7 + output6 + output5 + output4 + output3 + output2 + output1
+   
     add r10, r9, r8
     add r10, r10, r7
     add r10, r10, r6
@@ -213,23 +213,23 @@ output8_start:
     b loop
 
 end_loop:
-    @ Restaurar registros y salir
+   
     pop {r4, r5, r6, r7, lr}
     bx lr
     
 ping_pong:
-    @ Guardar registros necesarios
+    
     push {r4, r5, r6, r7, lr}
 
-    @ Inicializar variables
-    ldr r0, =500        @ speed
-    mov r1, #1          @ v
-    mov r2, #0          @ count
-    ldr r3, =tabla      @ puntero a la tabla
+   
+    ldr r0, =500        
+    mov r1, #1          
+    mov r2, #0          
+    ldr r3, =tabla      
   
 
 loop:
-    @ Si count es 0, recorrer toda la tabla
+    
     cmp r2, #0
     bne not_first_time
 
@@ -247,7 +247,7 @@ not_first_time:
     bl loop_inner
 
 loop_done:
-    @ Comprobar tecla de escape
+  
     ldr r0, =VK_ESCAPE
     bl GetAsyncKeyState
     cmp r0, #0
@@ -262,7 +262,7 @@ loop_inner_start:
     ldrb r4, [r3, r6]
     bl disp_binary
     bl leds
-    ldr r0, [sp, #8]    @ speed
+    ldr r0, [sp, #8]
  bl disp_binary
     bl Leds
 
@@ -276,7 +276,7 @@ loop_inner_end:
     bx lr
 
 skip_exit:
-    @ Restaurar registros y salir
+   
     pop {r4, r5, r6, r7, pc}
 
 
